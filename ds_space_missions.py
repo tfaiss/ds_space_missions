@@ -13,6 +13,6 @@ import pandas as pd
 path = "data/space_corrected.csv"
 
 missions = pd.read_csv(path)
-#print(missions)
+
 
 
