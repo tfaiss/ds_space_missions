@@ -5,8 +5,11 @@ Created on Tue Aug 25 18:46:00 2020
 @author: Tobias Faiss
 """
 
+## IMPORT LIBS
 import pandas as pd
 
+
+## LOAD DATASET
 path = "data/space_corrected.csv"
 df = pd.read_csv(path)
 
@@ -14,11 +17,7 @@ df = pd.read_csv(path)
 ## FUNCTIONS
 
 
-
-
-
 ## RENAMING COLUMNS
-
 # change column 'rocket' to 'Costs in m USD'
 df.rename(columns = {' Rocket':'Costs (Mio. USD)'}, inplace=True)
 
