@@ -59,4 +59,6 @@ df['Satellite'] = satellite
 # drop unnamed columns, location and detail since it has been replaced by new columns
 df.drop(['Unnamed: 0', 'Unnamed: 0.1', 'Location', 'Detail'], axis=1, inplace=True)
 
+## SAVE CLEANED DATA TO CSV
+df.to_csv("data/space_corrected_cleaned.csv")
 
