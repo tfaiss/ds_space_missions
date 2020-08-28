@@ -19,7 +19,7 @@ df = pd.read_csv(path)
 
 ## RENAMING COLUMNS
 # change column 'rocket' to 'Costs in m USD'
-df.rename(columns = {' Rocket':'Costs (Mio. USD)'}, inplace=True)
+df.rename(columns = {' Rocket':'Costs'}, inplace=True)
 
 
 ## SEPARATE 'LOCATION' INTO 'LAUNCH SITE' AND 'COUNTRY'
@@ -32,12 +32,12 @@ df['Site'] = launch_site
 
 
 # distill country from location and add it to dataframe
-country = df.Location.str.rsplit(',', -1)
+country = df.Location.str.rsplit(', ', -1)
 country = country.tolist()
 for i in country:
     del i[:-1]
 df['Country'] = country
-
+print (df['Country'])
 
 ## SEPARATE 'DETAILS' INTO 'ROCKET' AND 'SATELLITE'
 # distill rocket from details and add it to dataframe
