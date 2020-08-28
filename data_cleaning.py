@@ -24,7 +24,7 @@ df.rename(columns = {' Rocket':'Costs'}, inplace=True)
 
 ## SEPARATE 'LOCATION' INTO 'LAUNCH SITE' AND 'COUNTRY'
 # distill launch site from location and add it to dataframe
-launch_site = df.Location.str.rsplit(',', 1)
+launch_site = df.Location.str.rsplit(', ', 1)
 launch_site = launch_site.tolist()
 for i in launch_site:
     i.pop()
@@ -37,7 +37,7 @@ country = country.tolist()
 for i in country:
     del i[:-1]
 df['Country'] = country
-print (df['Country'])
+
 
 ## SEPARATE 'DETAILS' INTO 'ROCKET' AND 'SATELLITE'
 # distill rocket from details and add it to dataframe
