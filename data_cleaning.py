@@ -18,8 +18,17 @@ df = pd.read_csv(path)
 
 
 ## RENAMING COLUMNS
+<<<<<<< HEAD
 # change column 'rocket' to 'Costs in m USD'
 df.rename(columns = {' Rocket':'Costs'}, inplace=True)
+=======
+# change column 'rocket' to 'Costs'
+df.rename(columns = {' Rocket':'Costs'}, inplace=True)
+
+
+## ADD YEAR AS COLUMN
+df["Year"] = df["Datum"].apply(lambda x: x[-15:-10])
+>>>>>>> data_cleaning
 
 
 ## SEPARATE 'LOCATION' INTO 'LAUNCH SITE' AND 'COUNTRY'
